@@ -345,9 +345,9 @@ function generateRawReading(s) {
         
         //is it in the THOUSANDS position?
         if (pos == 0) {
-            //if it's 1, add 'sen'
+            //if it's 1, add 'issen'
             if (n[i] == '1') {
-                    reading += 'sen ';
+                    reading += 'issen ';
                     check = 1;
             }
             //if it's not 0, add the word
@@ -403,8 +403,12 @@ function generateRawReading(s) {
     
 }
 
-function generateRomajiReading(reading) {
+function generateRomajiReading(reading, num) {
 
+    // if input has 4 chars & first word is 'issen', change to 'sen'
+    if (String(num).length == 4) {
+        reading = reading.replace(/^issen/g,'sen');
+    }
     reading = reading.replace(/^sen man/g,'issen man');
     reading = reading.replace(/^sen oku/g,'issen oku');
     reading = reading.replace(/^sen chou/g,'issen chou');
@@ -420,11 +424,18 @@ function generateRomajiReading(reading) {
 
 }
 
-function generateHiraganaReading(reading) {
+function generateHiraganaReading(reading, num) {
 
-    reading = reading.replace(/^sen man/g,'いっせんまん');
-    reading = reading.replace(/^sen oku/g,'いっせんおく');
-    reading = reading.replace(/^sen chou/g,'いっせんちょう');
+    reading = reading.replace(/issen man/g,'いっせん まん');
+    reading = reading.replace(/issen oku/g,'いっせん おく');
+    reading = reading.replace(/issen chou/g,'いっせん ちょう');
+
+    // if input has 4 chars & first word is 'issen', change to 'sen'
+    if (String(num).length == 4) {
+        reading = reading.replace(/^issen/g,'せん');
+    }
+
+    reading = reading.replace(/issen/g,'いっせん');
 
     //replace weird readings
     reading = reading.replace(/san hyaku/g,'さんびゃく');
@@ -460,11 +471,21 @@ function generateHiraganaReading(reading) {
 }
 
 //convert regular words to traditional kanji
-function generateTraditionalJapaneseReading(reading) {
+function generateTraditionalJapaneseReading(reading, num) {
 
-    reading = reading.replace(/^sen man/g,'一千万');
-    reading = reading.replace(/^sen oku/g,'一千億');
-    reading = reading.replace(/^sen chou/g,'一千兆');
+    reading = reading.replace(/issen man/g,'一千万');
+    reading = reading.replace(/issen oku/g,'一千億');
+    reading = reading.replace(/issen chou/g,'一千兆');
+    
+    // if input has 4 chars & first word is 'issen', change to 'sen'
+    if (String(num).length == 4) {
+        reading = reading.replace(/^issen/g,'千');
+    }
+    reading = reading.replace(/issen/g,'一千');
+
+    // reading = reading.replace(/^sen man/g,'一千万');
+    // reading = reading.replace(/^sen oku/g,'一千億');
+    // reading = reading.replace(/^sen chou/g,'一千兆');
 
     reading = reading.replace(/zero/g,'零');
     reading = reading.replace(/itchou/g,'一兆');
@@ -520,10 +541,10 @@ $(document).ready(function(){
                     var raw = generateRawReading(decNum);
                     console.log(raw);
                     // if (readingOption == 1)
-                    $("#japanesewordsromaji").text(generateRomajiReading(raw));
+                    $("#japanesewordsromaji").text(generateRomajiReading(raw, decNum));
                     // else if (readingOption == 2)
-                    $("#japanesewordstraditional").text(generateTraditionalJapaneseReading(raw));
-                    $("#japanesewordshiragana").text(generateHiraganaReading(raw));
+                    $("#japanesewordstraditional").text(generateTraditionalJapaneseReading(raw, decNum));
+                    $("#japanesewordshiragana").text(generateHiraganaReading(raw, decNum));
                     lastNum = decNum;
                 }
             }
