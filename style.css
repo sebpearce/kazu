@@ -130,6 +130,7 @@ div.section-div {
 
 #input-container {
     color: rgba(0,0,0,0.5);
+    /*color: rgba(255,255,255,0.8);*/
     background-color: #953235;
     height: 12%;
 }
@@ -162,8 +163,9 @@ div.section-div {
     margin: 0 auto;
     display: block;
     font-size: 3em;
-    width: 99%;
+    width: 60%;
     font-weight: 400;
+    line-height: 100%;
 }
 
 #englishdigits {
@@ -213,11 +215,23 @@ div.section-div {
 
     body { font-size: 70%; }
     #links-left a { display: none;}
-    #userinput { font-size: 20px; width: 80%; }
-    #englishdigits, #japanesedigits, #japanesewordstraditional { font-size: 25px; }
+    #englishdigits, #japanesedigits { font-size: 25px; }
+    #japanesewordstraditional { font-size: 22px ;}
     #englishwords { font-size: 18px;}
     #japanesewordsromaji, #japanesewordshiragana {
         color: rgba(255,255,255,0.5);
+    }
+    #userinput { 
+        font-size: 20px; 
+        width: 80%; 
+        padding: 0; 
+        border: none;
+        background: none;
+        background-color: white;
+        border: 2px solid black;
+        -moz-box-shadow:    inset 0 0 10px #000000;
+        -webkit-box-shadow: inset 0 0 10px #000000;
+        box-shadow:         inset 0 0 10px #000000;
     }
 
 }
