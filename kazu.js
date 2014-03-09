@@ -406,7 +406,7 @@ function generateRawReading(s) {
 function generateRomajiReading(reading, num) {
 
     // if input has 4 chars & first word is 'issen', change to 'sen'
-    if (String(num).length == 4) {
+    if (num < 2000) {
         reading = reading.replace(/^issen/g,'sen');
     }
     reading = reading.replace(/^sen man/g,'issen man');
@@ -430,8 +430,8 @@ function generateHiraganaReading(reading, num) {
     reading = reading.replace(/issen oku/g,'いっせん おく');
     reading = reading.replace(/issen chou/g,'いっせん ちょう');
 
-    // if input has 4 chars & first word is 'issen', change to 'sen'
-    if (String(num).length == 4) {
+    // if input is 1999 or less & first word is 'issen', change to 'sen'
+    if (num < 2000) {
         reading = reading.replace(/^issen/g,'せん');
     }
 
@@ -477,8 +477,8 @@ function generateTraditionalJapaneseReading(reading, num) {
     reading = reading.replace(/issen oku/g,'一千億');
     reading = reading.replace(/issen chou/g,'一千兆');
     
-    // if input has 4 chars & first word is 'issen', change to 'sen'
-    if (String(num).length == 4) {
+    // if input is 1999 or less & first word is 'issen', change to 'sen'
+    if (num < 2000) {
         reading = reading.replace(/^issen/g,'千');
     }
     reading = reading.replace(/issen/g,'一千');
