@@ -1,0 +1,241 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    color: rgba(0,0,0,0.7);
+    font-weight: bold;
+    background-color: #1e2020;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+#links-left {
+    position: absolute;
+    font-size: 15px;
+    top: 5px;
+    left: 5px;
+    font-weight: 400;
+    z-index: 100;
+}
+
+.fb-like {
+    vertical-align: middle;
+}
+
+#links-left a {
+    color: #999;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#links-left a:hover {
+    color: #444;
+}
+
+#links-right {
+    position: absolute;
+    font-size: 13px;
+    top: 5px;
+    right: 5px;
+    font-weight: 600;
+    line-height: 13px;
+    z-index: 100;
+    display: block;
+}
+
+.twitter-share-button {
+    display: inline-block;
+}
+
+#page-wrapper {
+    height: 95%;
+    width: 100%;
+    display: table;
+}
+
+#titlebar {
+    width: 100%;
+    height: 30px;
+    display: table;
+    background-color: #eee;
+    border-bottom: 1px solid #aaa;
+    color: #444;
+    position: relative;
+    z-index: 1;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.62);
+    -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.62);
+    box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.62);
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #FFFFFF),
+        color-stop(1, #E0E0E0)
+    );
+    background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #E0E0E0 100%);
+    background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #E0E0E0 100%);
+    background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #E0E0E0 100%);
+    background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #E0E0E0 100%);
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #E0E0E0 100%);
+}
+
+#title {
+    display: table-cell;
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+div.section-div {
+    width: 100%;
+    display: table-row;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+}
+
+.section-div-inner {
+    display: table-cell; 
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#english-digits-container .section-div-inner {
+    border-top: 1px solid #ccc;
+}
+
+#japanese-digits-container .section-div-inner {
+    border-bottom: 2px solid #000;
+}
+
+#japanese-words-container .section-div-inner {
+    border-top: 1px solid #444;
+}
+
+#input-container {
+    color: rgba(0,0,0,0.5);
+    background-color: #953235;
+    height: 12%;
+}
+
+#english-digits-container {
+    background-color: #f6f6f6;
+    color: #1e2020;
+}
+
+#english-words-container {
+    background-color: #f6f6f6;
+    color: #1e2020;
+    height: 20%;
+}
+
+#japanese-digits-container {
+    background-color: #1e2020;
+    height: 23%;
+}
+
+#japanese-words-container {
+    background-color: #1e2020;
+}
+
+#userinput {
+    text-align: center;
+    outline: none;
+    border: none;
+    background: none;
+    margin: 0 auto;
+    display: block;
+    font-size: 3em;
+    width: 99%;
+    font-weight: 400;
+}
+
+#englishdigits {
+    font-size: 4em;
+    line-height: 100%;
+}
+
+#englishwords {
+    font-size: 2.3em;
+    font-family: Georgia, serif;
+    font-weight: normal;
+}
+
+#japanesedigits {
+    font-size: 4em;
+    color: #f6f6f6;
+    line-height: 120%;
+}
+
+#japanesewordsromaji {
+    font-size: 1em;
+    color: rgba(255,255,255,0.3);
+    word-spacing: 0.2em;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+}
+
+ #japanesewordstraditional {
+    font-size: 2.5em;
+    font-family: serif;
+    color: #f6f6f6;
+    position: relative;
+} 
+
+#japanesewordshiragana {
+    font-size: 1.2em;
+    font-weight: normal;
+    font-family: serif;
+    letter-spacing: -0.05em;
+    word-spacing: 0.2em;
+    color: rgba(255,255,255,0.3);
+}
+
+
+/*
+ computer screens >= 1280px 
+@media only screen and (min-width : 481px) {
+
+    body { font-size: 70%; }
+
+}
+
+ computer screens >= 1280px 
+@media only screen and (min-width : 630px) {
+
+    body { font-size: 70%; }
+
+}
+
+ computer screens >= 1280px 
+@media only screen and (min-width : 1024px) {
+
+    body { font-size: 90%; }
+
+}
+
+ computer screens >= 1280px 
+@media only screen and (min-width : 1280px) {
+
+    body { font-size: 100%; }
+
+}
+
+*/
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+     <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Kazu</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="">
+
+     <!-- social media stuff -->
+    <link rel="image_src" href="">
+    <meta property="og:title" content="Kazu - Learn to read Japanese numbers">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="http://sebpearce.com/kazu/">
+    <meta property="og:site_name" content="sebpearce.com">
+    <meta property="og:description" content="If you're having trouble getting big numbers right in English or Japanese, try this.">
+
+    <!-- normalize -->
+    <link rel="stylesheet" href="normalize.css">
+
+    <!-- font-awesome CSS -->
+<!--     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
+
+     <!-- my stylesheets -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Twitter button -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    <!-- FB and website link -->
+    <div id="links-left">
+        <div class="fb-like" data-href="http://sebpearce.com/come-again/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" style="margin-bottom: 5px"></div>&nbsp;
+        <a href="http://sebpearce.com">sebpearce.com</a>
+    </div>    
+    <div id="links-right">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="http://sebpearce.com/kazu/" data-text="Kazu: Learn to read Japanese numbers" data-hashtags="japanese">Tweet</a>
+    </div>
+
+    <div id="titlebar">
+        <div id="title"><h1>kazu</h1></div>
+    </div>
+
+    <div id="page-wrapper">
+
+        <div class="section-div" id="english-words-container">       
+            <div class="section-div-inner">
+                <span id="englishwords"></span><br />
+            </div>
+        </div>
+        <div class="section-div" id="english-digits-container">       
+            <div class="section-div-inner">
+                <span id="englishdigits"></span>
+            </div>
+        </div>
+        <div class="section-div" id="input-container">       
+            <!-- input-container -->
+            <div class="section-div-inner">
+                <input type="text" id="userinput" onfocus="if(typeof moveCursorToEnd != 'undefined') moveCursorToEnd(this, true)" value="10000" maxlength="16" autofocus="autofocus" />
+            </div>
+        </div>
+        <div class="section-div" id="japanese-digits-container">       
+            <div class="section-div-inner">
+                <span id="japanesedigits"></span><br />
+                <span id="japanesewordsromaji"></span><br />
+            </div>
+        </div>
+        <div class="section-div" id="japanese-words-container">       
+            <div class="section-div-inner">
+                <!-- <span style="line-height: 1em;"></span><br /> -->
+                <span id="japanesewordstraditional"></span><br />
+                <span id="japanesewordshiragana"></span><br />
+            </div>
+        </div>
+
+
+    </div> <!-- end of page-wrapper -->
+
+    <script src="jquery-1.11.0.js"></script>
+    <script src="kazu.js"></script>
+
+
+</body>
+
+</html>
