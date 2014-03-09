@@ -405,18 +405,16 @@ function generateRawReading(s) {
 
 function generateRomajiReading(reading) {
 
-    if (reading == 'sen man') {
-        reading = 'issen man';
-    } else if (reading == 'sen oku') {
-        reading = 'issen oku';
-    }
-    else {
-        reading = reading.replace(/san hyaku/g,'sambyaku');
-        reading = reading.replace(/roku hyaku/g,'roppyaku');
-        reading = reading.replace(/hachi hyaku/g,'happyaku');
-        reading = reading.replace(/san sen/g,'sanzen');
-        reading = reading.replace(/hachi sen/g,'hassen');
-    }
+    reading = reading.replace(/^sen man/g,'issen man');
+    reading = reading.replace(/^sen oku/g,'issen oku');
+    reading = reading.replace(/^sen chou/g,'issen chou');
+
+    reading = reading.replace(/san hyaku/g,'sambyaku');
+    reading = reading.replace(/roku hyaku/g,'roppyaku');
+    reading = reading.replace(/hachi hyaku/g,'happyaku');
+    reading = reading.replace(/san sen/g,'sanzen');
+    reading = reading.replace(/hachi sen/g,'hassen');
+    reading = reading.replace(/juu chou/g,'jutchou');
 
     return reading.trim(); 
 
@@ -424,52 +422,53 @@ function generateRomajiReading(reading) {
 
 function generateHiraganaReading(reading) {
 
-    //check for 'issen man'
-    if (reading == 'sen man') {
-        reading = 'いっせんまん';
-    } else if (reading == 'sen oku') {
-        reading = 'いっせんおく';
-    }
-    else {
-        //replace weird readings
-        reading = reading.replace(/san hyaku/g,'さんびゃく');
-        reading = reading.replace(/roku hyaku/g,'ろっぴゃく');
-        reading = reading.replace(/hachi hyaku/g,'はっぴゃく');
-        reading = reading.replace(/san sen/g,'さんぜん');
-        reading = reading.replace(/hachi sen/g,'はっせん');
-        reading = reading.replace(/itchou/g,'いっちょう');
-            
-        //convert regular words to hiragana
-        reading = reading.replace(/zero/g,'れい');
-        reading = reading.replace(/ichi/g,'いち');
-        reading = reading.replace(/ni/g,'に');
-        reading = reading.replace(/san/g,'さん');
-        reading = reading.replace(/yon/g,'よん');
-        reading = reading.replace(/go/g,'ご');
-        reading = reading.replace(/roku/g,'ろく');
-        reading = reading.replace(/nana/g,'なな');
-        reading = reading.replace(/hachi/g,'はち');
-        reading = reading.replace(/kyuu/g,'きゅう');
-        reading = reading.replace(/juu/g,'じゅう');
-            
-        reading = reading.replace(/juu/g,'じゅう');
-        reading = reading.replace(/hyaku/g,'ひゃく');
-        reading = reading.replace(/sen/g,'せん');
-        reading = reading.replace(/man/g,'まん');
-        reading = reading.replace(/oku/g,'おく');
-        reading = reading.replace(/chou/g,'ちょう');
-    }    
+    reading = reading.replace(/^sen man/g,'いっせんまん');
+    reading = reading.replace(/^sen oku/g,'いっせんおく');
+    reading = reading.replace(/^sen chou/g,'いっせんちょう');
+
+    //replace weird readings
+    reading = reading.replace(/san hyaku/g,'さんびゃく');
+    reading = reading.replace(/roku hyaku/g,'ろっぴゃく');
+    reading = reading.replace(/hachi hyaku/g,'はっぴゃく');
+    reading = reading.replace(/san sen/g,'さんぜん');
+    reading = reading.replace(/hachi sen/g,'はっせん');
+    reading = reading.replace(/itchou/g,'いっちょう');
+    reading = reading.replace(/juu chou/g,'じゅっちょう');
+        
+    //convert regular words to hiragana
+    reading = reading.replace(/zero/g,'れい');
+    reading = reading.replace(/ichi/g,'いち');
+    reading = reading.replace(/ni/g,'に');
+    reading = reading.replace(/san/g,'さん');
+    reading = reading.replace(/yon/g,'よん');
+    reading = reading.replace(/go/g,'ご');
+    reading = reading.replace(/roku/g,'ろく');
+    reading = reading.replace(/nana/g,'なな');
+    reading = reading.replace(/hachi/g,'はち');
+    reading = reading.replace(/kyuu/g,'きゅう');
+    reading = reading.replace(/juu/g,'じゅう');
+        
+    reading = reading.replace(/juu/g,'じゅう');
+    reading = reading.replace(/hyaku/g,'ひゃく');
+    reading = reading.replace(/sen/g,'せん');
+    reading = reading.replace(/man/g,'まん');
+    reading = reading.replace(/oku/g,'おく');
+    reading = reading.replace(/chou/g,'ちょう');
 
     return reading;
 
 }
 
+//convert regular words to traditional kanji
 function generateTraditionalJapaneseReading(reading) {
 
-    //convert regular words to traditional kanji
+    reading = reading.replace(/^sen man/g,'一千万');
+    reading = reading.replace(/^sen oku/g,'一千億');
+    reading = reading.replace(/^sen chou/g,'一千兆');
+
     reading = reading.replace(/zero/g,'零');
     reading = reading.replace(/itchou/g,'一兆');
-    reading = reading.replace(/ichi/g,'ー');
+    reading = reading.replace(/ichi/g,'一');
     reading = reading.replace(/ni/g,'二');
     reading = reading.replace(/san/g,'三');
     reading = reading.replace(/yon/g,'四');
@@ -487,8 +486,8 @@ function generateTraditionalJapaneseReading(reading) {
 
     // strip all spaces from string
     reading = reading.replace(/ /g,'')
-    return reading;
 
+    return reading;
 }
 
 function moveCursorToEnd(el) {
