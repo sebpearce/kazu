@@ -165,6 +165,7 @@ function randomNumber() {
 // get English reading of numbers from 1-999
 function generateEnglishFactorWords(num) {
 
+    var hyphen = false;
     var result = '';
     // english factor words (1 to 999)
     if (num >= 100) {
@@ -206,7 +207,6 @@ function generateEnglishWords(num) {
     var factor = 0;
     var h, t, u = 0;
     var tensWord = "";
-    var hyphen = false;
 
     if (num == 0) {
         return 'zero';
@@ -519,6 +519,7 @@ $(document).ready(function(){
 
                     // get a raw reading 
                     var raw = generateRawReading(decNum);
+                    console.log(raw);
                     // if (readingOption == 1)
                     $("#japanesewordsromaji").text(generateRomajiReading(raw));
                     // else if (readingOption == 2)
