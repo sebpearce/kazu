@@ -208,34 +208,26 @@ div.section-div {
 }
 
 
+
+@media only screen and (max-width : 480px) {
+
+    body { font-size: 70%; }
+    #links-left a { display: none;}
+    #userinput { font-size: 20px; width: 80%; }
+    #englishdigits, #japanesedigits, #japanesewordstraditional { font-size: 25px; }
+    #englishwords { font-size: 18px;}
+    #japanesewordsromaji, #japanesewordshiragana {
+        color: rgba(255,255,255,0.5);
+    }
+
+}
+
 /*
- computer screens >= 1280px 
+
 @media only screen and (min-width : 481px) {
-
-    body { font-size: 70%; }
-
-}
-
- computer screens >= 1280px 
-@media only screen and (min-width : 630px) {
-
-    body { font-size: 70%; }
-
-}
-
- computer screens >= 1280px 
-@media only screen and (min-width : 1024px) {
-
-    body { font-size: 90%; }
-
-}
-
- computer screens >= 1280px 
-@media only screen and (min-width : 1280px) {
-
-    body { font-size: 100%; }
 
 }
 
 */
+
 
