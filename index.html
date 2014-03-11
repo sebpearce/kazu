@@ -13,22 +13,33 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="">
 
+    <!-- Apple icons -->
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@_sebu_">
+    <meta name="twitter:creator" content="@_sebu_">
+    <meta name="twitter:title" content="Kazu: Learn to read Japanese/English numbers">
+    <meta name="twitter:description" content="If you're having trouble understanding big numbers in English or Japanese, try this.">
+    <meta name="twitter:image:src" content="http://sebpearce.com/kazu/touch-icon-iphone.png">
+    <meta name="twitter:domain" content="sebpearce.com">
+
      <!-- social media stuff -->
     <link rel="image_src" href="http://sebpearce.com/kazu/kazu_screenshot.png">
-    <meta property="og:title" content="Kazu - Learn to read Japanese numbers">
+    <meta property="og:title" content="Kazu - Learn to read Japanese/English numbers">
     <meta property="og:image" content="http://sebpearce.com/kazu/kazu_screenshot.png">
     <meta property="og:url" content="http://sebpearce.com/kazu/">
     <meta property="og:site_name" content="sebpearce.com">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="If you're having trouble getting big numbers right in English or Japanese, try this.">
+    <meta property="og:description" content="If you're having trouble understanding big numbers in English or Japanese, try this.">
     <meta property="fb:admins" content="673372761" /> 
     <meta property="fb:app_id" content="611704965575973" /> 
 
     <!-- normalize -->
     <link rel="stylesheet" href="normalize.css">
-
-    <!-- font-awesome CSS -->
-<!--     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
 
      <!-- my stylesheets -->
     <link rel="stylesheet" href="style.css">
@@ -77,7 +88,7 @@
         <div class="section-div" id="input-container">       
             <!-- input-container -->
             <div class="section-div-inner">
-                <input type="text" id="userinput" onfocus="if(typeof moveCursorToEnd != 'undefined') moveCursorToEnd(this, true)" value="10000" maxlength="16" autofocus="autofocus" />
+                <input type="text" id="userinput" onfocus="if(typeof moveCursorToEnd != 'undefined') moveCursorToEnd(this, true)" placeholder="Enter a number here." maxlength="16" autofocus="autofocus" />
             </div>
         </div>
         <div class="section-div" id="japanese-digits-container">       

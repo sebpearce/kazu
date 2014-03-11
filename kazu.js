@@ -539,7 +539,7 @@ $(document).ready(function(){
 
                     // get a raw reading 
                     var raw = generateRawReading(decNum);
-                    console.log(raw);
+                    // console.log(raw);
                     // if (readingOption == 1)
                     $("#japanesewordsromaji").text(generateRomajiReading(raw, decNum));
                     // else if (readingOption == 2)
@@ -567,6 +567,14 @@ $(document).ready(function(){
     // move cursor to end of input instead of selecting it
     elem = $("#userinput")[0];
     moveCursorToEnd(elem);
+
+    // default numbers on page load
+    $("#japanesedigits").text('1万');
+    $("#englishdigits").text('10,000');
+    $("#englishwords").text('ten thousand');
+    $("#japanesewordsromaji").text('ichi man');
+    $("#japanesewordstraditional").text('一万');
+    $("#japanesewordshiragana").text('いち まん');
 
 });
 
