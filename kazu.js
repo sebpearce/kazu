@@ -7,38 +7,9 @@
 
 (function kazu(){
 
-  decNum = 10000; // variable for the number in the input
-  lastNum = 0; // last number that was processed
-  textShrink = false; // keep track of whether text has shrunk
-
-  possiblePlaces = [
-    Math.pow(10, 4),
-    Math.pow(10, 5),
-    Math.pow(10, 6),
-    Math.pow(10, 7),
-    Math.pow(10, 8),
-    Math.pow(10, 9),
-    Math.pow(10, 10),
-    Math.pow(10, 11),
-    Math.pow(10, 12),
-  ];
-
-  expArray = [
-    Math.pow(10, 0),
-    Math.pow(10, 1),
-    Math.pow(10, 2),
-    Math.pow(10, 3),
-    Math.pow(10, 4),
-    Math.pow(10, 5),
-    Math.pow(10, 6),
-    Math.pow(10, 7),
-    Math.pow(10, 8),
-    Math.pow(10, 9),
-    Math.pow(10, 10),
-    Math.pow(10, 11),
-    Math.pow(10, 12),
-  ];
-
+  var decNum = 10000; // variable for the number in the input
+  var lastNum = 0; // last number that was processed
+  var textShrink = false; // keep track of whether text has shrunk
 
   var englishPlaceWords = [
     'quadrillion',
@@ -87,13 +58,6 @@
     'nine',
   ];
 
-  // numbers for ones, tens and hundreds place in English numbers
-  var eng_factors = [
-    Math.pow(10, 2),
-    Math.pow(10, 1),
-    Math.pow(10, 0),
-  ];
-
   var eng_places = [
     Math.pow(10, 15), // quadrillion 0
     Math.pow(10, 12), // trillion 1
@@ -117,50 +81,13 @@
 
   var kanjiList = ['兆', '億', '万', '千', '百', '十'];
 
-  var hiraganaList = ['ちょう', 'おく', 'まん', 'せん', 'ひゃく', 'じゅう'];
-
-  var tens = ['', 'いち', 'に', 'さん', 'よん', 'ご', 'ろく', 'なな', 'はち', 'きゅう'];
-
   var ones = ['', 'man', 'oku', 'chou'];
-  var onesN = ['', '万', '億', '兆'];
 
   var nums = ['zero', 'ichi', 'ni', 'san', 'yon', 'go', 'roku', 'nana', 'hachi', 'kyuu', 'juu'];
-  var numsN = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
 
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-
-  // Courtesy of http://www.protonfish.com/random.shtml
-  function rnd_standardDistribution() {
-    return (Math.random() * 2 - 1) + (Math.random() * 2 - 1) + (Math.random() * 2 - 1);
-  }
-
-  // Courtesy of http://www.protonfish.com/random.shtml
-  function rnd(mean, stdev) {
-    return Math.round(rnd_standardDistribution() * stdev + mean);
-  }
-
-  function randomNumber() {
-
-    // generate a random number from 2-15 on a bell curve as rnd(mean, sd)
-    var prob = rnd(3, 1);
-
-    // set the upperLimit to one of the choices in possiblePlaces (mean = 10^10)
-    upperLimit = possiblePlaces[prob];
-
-    //generate random number from 1-upperLimit
-    var result = Math.floor((Math.random() * upperLimit) + 10000);
-
-    // we're going to keep 60% of the digits and round the rest to zeros
-    var numberOfDigits = String(result).length;
-    var howMuchToKeep = Math.floor(numberOfDigits * 0.6);
-    var pointInArray = expArray[howMuchToKeep];
-    result = Math.round(result / pointInArray) * pointInArray;
-
-    return result;
-
   }
 
   // get English reading of numbers from 1-999
@@ -168,6 +95,7 @@
 
     var hyphen = false;
     var result = '';
+    var h, t, u;
     
     // english factor words (1 to 999)
     if (num >= 100) {
@@ -209,8 +137,6 @@
     var chk = num;
     var result = "";
     var factor = 0;
-    var h, t, u = 0;
-    var tensWord = "";
 
     if (num == 0) {
       return 'zero';
@@ -218,7 +144,7 @@
 
     while (chk > 0) {
 
-      for (i = 0; i < eng_places.length; i++) {
+      for (var i = 0; i < eng_places.length; i++) {
 
         if (chk >= eng_places[i]) {
 
@@ -294,7 +220,6 @@
 
   }
 
-
   function generateRawReading(s) {
 
     if (s == 0) {
@@ -302,11 +227,11 @@
     }
 
     var reading = '';
-    var main = '';
+    
     s = s.toString(); // s = our number as a string
     s = s.replace(/[\, ]/g, ''); // ignore commas
     if (s != parseFloat(s)) return 'not a number';
-    x = s.length; // x = count of digits
+    var x = s.length; // x = count of digits
     if (x > 16) return 'too big';
     var n = s.split(''); // n = array of all digits
     var check = 0;
@@ -559,12 +484,12 @@
     });
 
     // trigger Enter keyup
-    e = jQuery.Event("keyup");
-    e.which = 13 //enter key
+    var e = jQuery.Event("keyup");
+    e.which = 13; //enter key
     jQuery('#userinput').trigger(e);
 
     // move cursor to end of input instead of selecting it
-    elem = $("#userinput")[0];
+    var elem = $("#userinput")[0];
     moveCursorToEnd(elem);
 
     // default numbers on page load
@@ -596,6 +521,5 @@ Other sound changes:
 800     はっぴゃく
 3000    さんぜん
 8000    はっせん
-
 
 */
